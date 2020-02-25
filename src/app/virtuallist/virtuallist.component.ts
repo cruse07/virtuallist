@@ -11,9 +11,9 @@ import { ChangeEvent } from 'angular-virtual-list';
 export class VirtuallistComponent implements OnInit {
   public items: Array<UserModel>=[];
   public scrollList: Array<UserModel>=[];
-  protected items$ = new BehaviorSubject<UserModel[]>(null);
-  protected buffer: UserModel[] = [];
-  protected loading: boolean;
+  public items$ = new BehaviorSubject<UserModel[]>(null);
+  public buffer: UserModel[] = [];
+  public loading: boolean;
   startingItem:number;
   enditem:number;
   constructor() {
@@ -22,7 +22,7 @@ export class VirtuallistComponent implements OnInit {
 
   ngOnInit() {
   }
-  protected fetchMore(event: ChangeEvent) {
+  public fetchMore(event: ChangeEvent) {
     this.startingItem=event.start+1;
     this.enditem= event.end;
     console.log(event.start);
